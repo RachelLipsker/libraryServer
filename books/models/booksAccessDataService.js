@@ -103,7 +103,8 @@ const orderBook = async (bookId, userId) => {
                 createError("Mongoose", new Error("the book not found"))
             }
             let user = await User.findById(userId);
-            if (user.orders.length >= user.booksToOrder) {
+
+            if (user.orders.length >= user.booksToOrder && !(!!book.orders.find(order => order.userId == userId))) {
                 createError("Mongoose", new Error("user cant order more books"))
             }
             //אם הספר מוזמן -  להסיר את ההזמנה
