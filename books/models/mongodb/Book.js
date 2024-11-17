@@ -15,7 +15,7 @@ const bookSchema = new mongoose.Schema({
         ref: 'Genre',
         required: true
     },
-    image: { ...URL, default: "https://drive.google.com/file/d/1-olbioaT_R4Q0tgTKJzdfpaWP7EbkuvR/view?usp=sharing" },
+    image: { ...URL, default: "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1731831519~exp=1731835119~hmac=1da50272cbe900456b1e84898dffe2a42b837c62c1e63eec05cfcea7daaa107c&w=740" },
     alt: {
         ...DEFAULT_VALIDATION,
         required: false,

@@ -123,7 +123,7 @@ const orderBook = async (bookId, userId) => {
             // אחרת - להזמין
             let bookOrder = {
                 userId: new mongoose.Types.ObjectId(userId),
-                userName: user.firstName + "" + user.lastName
+                userName: user.firstName + " " + user.lastName
             };
             let userOrder = {
                 bookId: new mongoose.Types.ObjectId(bookId),
