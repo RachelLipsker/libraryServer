@@ -32,7 +32,8 @@ const getBooks = async () => {
 const getBook = async (bookId) => {
     if (DB == "mongodb") {
         try {
-            let book = await Book.findById(bookId).populate([{ path: 'author' }, { path: 'genre' }]);
+            let book = await Book.findById(bookId)
+            // .populate([{ path: 'author' }, { path: 'genre' }]);
             return book;
         } catch (error) {
             createError("Mongoose", error);

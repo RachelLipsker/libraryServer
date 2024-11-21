@@ -103,7 +103,7 @@ router.delete("/:id", auth, async (req, res) => {
     }
 });
 
-router.patch("isAdmin/:id", auth, async (req, res) => {
+router.patch("/isAdmin/:id", auth, async (req, res) => {
     try {
         const { id } = req.params;
         const userInfo = req.user;
@@ -121,7 +121,7 @@ router.patch("isAdmin/:id", auth, async (req, res) => {
     }
 });
 
-router.patch("borrowings/:id", auth, async (req, res) => {
+router.patch("/borrowings/:id", auth, async (req, res) => {
     try {
         const { id } = req.params;
         const userInfo = req.user;
@@ -141,7 +141,7 @@ router.patch("borrowings/:id", auth, async (req, res) => {
 });
 
 
-router.patch("orders/:id", auth, async (req, res) => {
+router.patch("/orders/:id", auth, async (req, res) => {
     try {
         const { id } = req.params;
         const userInfo = req.user;

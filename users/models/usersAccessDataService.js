@@ -102,10 +102,12 @@ const deleteUser = async (userId) => {
     if (DB == "mongodb") {
         try {
             let user = await User.findById(userId);
-            if (user.openBorrowings.length > 0) {
+            if (user.openBorrowings?.length > 0) {
                 createError("Mongoose", new Error("user must return books before delete account"))
             }
-            await deleteUserOrders();
+            if (user.orders?.length > 0) {
+                await deleteUserOrders();
+            }
             user = await User.findByIdAndDelete(userId);
             return user;
         } catch (error) {

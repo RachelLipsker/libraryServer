@@ -3,6 +3,7 @@ const { createError } = require("../../utils/handleErrors");
 const Author = require("./mongodb/Author");
 const Book = require("../../books/models/mongodb/Book");
 const DB = config.get("DB");
+const mongoose = require("mongoose")
 
 
 const createAuthor = async (newAuthor) => {
@@ -45,7 +46,7 @@ const deleteAuthor = async (authorId) => {
         try {
             let author = await Author.findById(authorId);
 
-            let authorObjectId = mongoose.Types.ObjectId(authorId);
+            let authorObjectId = new mongoose.Types.ObjectId(authorId);
 
             let books = await Book.find({ author: authorObjectId });
             if (books.length > 0) {

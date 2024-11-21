@@ -58,7 +58,7 @@ router.delete("/:id", auth, async (req, res) => {
         let author = await deleteAuthor(id);
         res.send(author);
     } catch (error) {
-        handleError(res, 400, error.message);
+        handleError(res, error.status || 400, error.message);
     }
 });
 

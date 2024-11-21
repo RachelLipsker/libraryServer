@@ -3,7 +3,7 @@ const Genre = require("./mongodb/Genre");
 const { createError } = require("../../utils/handleErrors");
 const Book = require("../../books/models/mongodb/Book");
 const DB = config.get("DB");
-
+const mongoose = require("mongoose");
 
 const createGenre = async (newGenre) => {
     if (DB == "mongodb") {
@@ -44,7 +44,7 @@ const deleteGenre = async (genreId) => {
         try {
             let genre = await Genre.findById(genreId);
 
-            let genreObjectId = mongoose.Types.ObjectId(genreId);
+            let genreObjectId = new mongoose.Types.ObjectId(genreId);
 
             let books = await Book.find({ genre: genreObjectId });
             if (books.length > 0) {
