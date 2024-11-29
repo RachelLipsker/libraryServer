@@ -1,6 +1,6 @@
-# REST API for Users and Cards
+# REST API for Library
 
-This project is a REST API that allows performing CRUD operations for users and cards. Built with Node.js and Express, this server project provides a robust backend solution for managing user data and card information.
+The server is for a library project, where book borrowing and returning is performed, and crud operations for books, users, authors, genres, and borrowing are performed.
 
 ## Table of Contents
 
