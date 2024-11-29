@@ -8,6 +8,7 @@ const corsMiddleware = require("./middlewares/cors");
 const loggerMiddleware = require("./logger/loggerService");
 const { handleError } = require("./utils/handleErrors");
 const router = require("./router/router");
+const insertInitialData = require("./helpers/initialData");
 const ENVIRONMENT = config.get("ENVIRONMENT");
 
 const app = express();
@@ -27,7 +28,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
     console.log(chalk.yellow("server is listening to port " + PORT));
     connectToDb();
-    // if (ENVIRONMENT == "development") {
-    //     insertInitialData();
-    // }
+    if (ENVIRONMENT == "development") {
+        insertInitialData();
+    }
 });
