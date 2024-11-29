@@ -48,10 +48,9 @@ To run the project in different environments, use the following commands:
    ```bash
    npm start    
 ## API Documentation
-You can find the API documentation for the Users and Cards endpoints here:
+You can find the API documentation for the Library endpoint here:
 
-- Library: [Postman Documentation]([https://documenter.getpostman.com/view/38195820/2sAXxJhaNU](https://documenter.getpostman.com/view/38195820/2sAYBXCWv5
-))
+- Library: [postman documentation](https://documenter.getpostman.com/view/38195820/2sAYBXCWv5)
 
 
 
